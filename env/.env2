@@ -1,0 +1,3 @@
+VCAP_SERVICES='{}'
+cds_requires='{"API_BUSINESS_PARTNER":{"impl":"@sap/cds/srv/remote-service.js","external":true,"kind":"odata-v2","model":"srv/external/API_BUSINESS_PARTNER","credentials":{"destination":"apihub_sandbox","path":"s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER"}},"auth":{"strategy":"dummy","kind":"dummy"}}'
+destinations='[{"name":"apihub_sandbox","url":"https://apihub_sandbox.dest","proxyHost":"http://127.0.0.1","proxyPort":"8887"}]'

@@ -1,0 +1,39 @@
+{
+	"name": "RiskManagement",
+	"version": "1.0.0",
+	"dependencies": {
+		"@cap-js/hana": "^2",
+		"@sap/cds": "^9",
+		"@sap-cloud-sdk/connectivity": "^4",
+		"@sap-cloud-sdk/http-client": "^4",
+		"@sap-cloud-sdk/resilience": "^4"
+	},
+	"devDependencies": {
+		"@cap-js/sqlite": "^2.4",
+		"cds-plugin-ui5": "^0.17.0",
+		"@sap/dev-cap-tools": "^1.31.0"
+	},
+	"scripts": {
+		"start": "cds-serve",
+		"watch-risks": "cds watch --open risks.risks/index.html?sap-ui-xx-viewCache=false --livereload false"
+	},
+	"private": true,
+	"cds": {
+		"requires": {
+			"API_BUSINESS_PARTNER": {
+				"kind": "odata-v2",
+				"model": "srv/external/API_BUSINESS_PARTNER",
+				"credentials": {
+					"destination": "apihub_sandbox",
+					"url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
+				}
+			}
+		}
+	},
+	"workspaces": [
+		"app/*"
+	],
+	"sapux": [
+		"app/risks"
+	]
+}

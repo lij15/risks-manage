@@ -26,6 +26,7 @@ modules:
     requires:
       - name: RiskManagement-db
       - name: RiskManagement-destination
+      - name: RiskManagement-auth
 
   - name: RiskManagement-db-deployer
     type: hdb
@@ -46,3 +47,16 @@ resources:
     parameters:
       service: destination
       service-plan: lite
+  - name: RiskManagement-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: RiskManagement-${org}-${space}
+        tenant-mode: dedicated
+        oauth2-configuration:
+          credential-types:
+            - "binding-secret"
+            - "x509"

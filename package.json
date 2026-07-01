@@ -32,7 +32,8 @@
       },
       "[production]": {
         "auth": "xsuaa"
-      }
+      },
+      "html5-repo": true
     }
   },
   "workspaces": [

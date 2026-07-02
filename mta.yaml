@@ -18,8 +18,6 @@ modules:
     parameters:
       instances: 1
       buildpack: nodejs_buildpack
-      routes:
-        - route: riskmanagement-srv-a4844583trial.cfapps.ap21.hana.ondemand.com
     build-parameters:
       builder: npm-ci
     provides:
